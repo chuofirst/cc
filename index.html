@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>無限画像タブ生成</title>
+</head>
+<body>
+    <h1>画像タブ生成ボタン</h1>
+    <button id="openTabs">画像タブを10個開く</button>
+
+    <script>
+        document.getElementById('openTabs').addEventListener('click', function() {
+            // 画像のURLを指定
+            const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0E-O7ycHAETPnYaqWDHgwgawoeskPiwd1A&s';
+            
+            // 10回繰り返して新しいタブで開く
+            for (let i = 0; i < 10; i++) {
+                window.open(imageUrl, '_blank');
+            }
+            
+            alert('タブを開こうとしました。ブロックされた場合はブラウザのアドレスバーを確認してください。');
+        });
+    </script>
+</body>
+</html>
+
