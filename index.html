@@ -2,24 +2,71 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>無限画像タブ生成</title>
+    <title>10個のポップアップ表示</title>
+    <style>
+        /* ポップアップの基本スタイル */
+        .popup-img {
+            position: fixed;
+            width: 250px; /* 画像の幅 */
+            height: auto;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 9999;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .popup-img:hover {
+            transform: scale(1.05);
+        }
+        .close-hint {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: sans-serif;
+            z-index: 10000;
+        }
+    </style>
 </head>
 <body>
-    <h1>画像タブ生成ボタン</h1>
-    <button id="openTabs">画像タブを10個開く</button>
+
+    <div class="close-hint">画像をクリックすると消えます</div>
 
     <script>
-        document.getElementById('openTabs').addEventListener('click', function() {
-            // 画像のURLを指定
-            const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0E-O7ycHAETPnYaqWDHgwgawoeskPiwd1A&s';
-            
-            // 10回繰り返して新しいタブで開く
+        // 表示したい画像のURL
+        const imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf0E-O7ycHAETPnYaqWDHgwgawoeskPiwd1A&s";
+
+        window.onload = function() {
             for (let i = 0; i < 10; i++) {
-                window.open(imageUrl, '_blank');
+                createPopup(i);
             }
+        };
+
+        function createPopup(index) {
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.className = 'popup-img';
             
-            alert('タブを開こうとしました。ブロックされた場合はブラウザのアドレスバーを確認してください。');
-        });
+            // 画面内のランダムな位置を計算
+            const maxX = window.innerWidth - 300;
+            const maxY = window.innerHeight - 250;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            
+            img.style.left = randomX + 'px';
+            img.style.top = randomY + 'px';
+            
+            // クリックで消えるように設定
+            img.onclick = function() {
+                this.remove();
+            };
+            
+            document.body.appendChild(img);
+        }
     </script>
+
 </body>
 </html>
