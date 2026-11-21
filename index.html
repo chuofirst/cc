@@ -152,54 +152,7 @@ input.ans:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px col
 .note{font-size:12.5px;color:var(--sub);margin-top:12px;line-height:1.75}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-@media (min-width:600px){ h1{padding-left:24px} .tabs{margin-left:24px;margin-right:24px;max-width:520px} .qbox{font-size:22px} }
-
-/* ---------- プリント（赤シート） ---------- */
-.tab{font-size:14.5px;padding:10px 4px}
-.pnav{display:flex;gap:8px;align-items:center;margin-bottom:10px}
-.pnav select{flex:1;min-width:0;padding:10px 12px;font-size:14.5px;font-weight:600;border-radius:12px;border:1px solid var(--line);
-  background:var(--card);color:var(--text);font-family:inherit;box-shadow:var(--shadow)}
-.pnav .btn{flex:0 0 auto;min-width:46px}
-#vscroll{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow-lg);-webkit-overflow-scrolling:touch}
-#vwrap{position:relative;max-width:none}
-.pgimg{width:100%;background-size:100% 200%;background-repeat:no-repeat;background-position:0 0;background-color:#fff}
-#pgSheet{position:absolute;left:0;top:0;background-position:0 100%;pointer-events:none}
-#sheetBox{position:absolute;left:0;right:0;pointer-events:none;
-  border-top:3px solid rgba(110,0,0,.65);border-bottom:3px solid rgba(110,0,0,.65);
-  box-shadow:0 0 0 1px rgba(255,255,255,.4),0 6px 18px rgba(120,0,0,.35)}
-#grip{position:sticky;left:10px;display:inline-flex;align-items:center;justify-content:center;gap:6px;margin:8px 0 0 10px;
-  min-width:84px;height:44px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.88);color:#8a0010;font-weight:800;font-size:14px;
-  box-shadow:0 2px 8px rgba(0,0,0,.3);pointer-events:auto;touch-action:none;cursor:ns-resize;user-select:none;-webkit-user-select:none}
-.pmsg{margin:10px 2px;padding:10px 12px;border-radius:12px;background:var(--ng-bg);color:var(--ng);font-size:13.5px;font-weight:600}
-.sbar{position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--card);border-top:1px solid var(--line);
-  padding:8px 12px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -4px 16px rgba(0,0,0,.12)}
-.sbar .in{max-width:760px;margin:0 auto}
-.srow{display:flex;gap:8px;align-items:center;margin-bottom:6px}
-.srow:last-child{margin-bottom:0}
-.srow .btn{flex:1}
-.srow label{flex:1;display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--sub)}
-.srow input[type=range]{flex:1;min-width:0;accent-color:var(--accent);height:28px}
-#sOn.off{opacity:.65}
-#t3 .note{margin-bottom:6px}
-#t3{padding-bottom:120px}
-#sOn{white-space:nowrap;flex:1.5;background:#e11d48;border-color:#e11d48;color:#fff}
-#sOn.off{background:var(--card);border-color:var(--line);color:var(--text);opacity:1}
-.srow .btn{white-space:nowrap;padding-left:6px;padding-right:6px}
-
-/* ---------- 「プリントを見る」ボタンと目印 ---------- */
-.pbtn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);
-  background:var(--card);color:var(--accent-ink);font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;
-  transition:background .15s,border-color .15s,transform .08s}
-.pbtn:hover{border-color:var(--accent)}
-.pbtn:active{transform:scale(.97)}
-.wrongs .pbtn{margin-top:6px;padding:6px 11px;font-size:12.5px}
-.pfocus{margin:0 0 10px;padding:10px 13px;border-radius:12px;background:var(--accent-bg);color:var(--accent-ink);font-size:13.5px;line-height:1.65}
-.pfocus b{font-size:15px}
-.pfocus .hint{display:block;margin-top:4px;font-size:12px;color:var(--sub)}
-#pMark{position:absolute;left:0;right:0;z-index:3;pointer-events:none;border-radius:4px;
-  background:rgba(255,214,0,.26);border-top:3px solid rgba(234,138,0,.95);border-bottom:3px solid rgba(234,138,0,.95)}
-#pMark span{position:absolute;left:8px;top:4px;padding:2px 9px;border-radius:999px;background:rgba(234,138,0,.95);color:#fff;font-size:12px;font-weight:800}
-#pRet{background:var(--accent-bg);border-color:var(--accent);color:var(--accent-ink);font-weight:800}
+@media (min-width:600px){ h1{padding-left:24px} .tabs{margin-left:24px;margin-right:24px;max-width:420px} .qbox{font-size:22px} }
 </style>
 </head>
 <body>
@@ -207,8 +160,7 @@ input.ans:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px col
   <h1>🌏 地理総合 暗記ツール</h1>
   <div class="tabs">
     <button class="tab active" data-tab="t1">一問一答</button>
-    <button class="tab" data-tab="t2">単語カード</button>
-    <button class="tab" data-tab="t3">プリント</button>
+    <button class="tab" data-tab="t2">単語カード（入力）</button>
   </div>
 </header>
 
@@ -278,7 +230,6 @@ input.ans:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px col
         <button class="btn ok big" id="selfOk" hidden>自分は分かってた（正解にする）</button>
         <button class="btn big" id="toBad" hidden>不正解に直す</button>
         <button class="btn big" id="redo">もう一度答える</button>
-        <button class="btn big" id="viewPrint">📄 プリントを見る</button>
         <button class="btn primary big" id="next">次へ</button>
       </div>
       <div class="row"><button class="btn ghost" id="back">← ひとつ戻る</button></div>
@@ -297,35 +248,7 @@ input.ans:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px col
       </div>
     </div>
   </section>
-
-  <!-- ========== タブ3: プリント（赤シート） ========== -->
-  <section id="t3" hidden>
-    <div class="pnav">
-      <button class="btn sm" id="pRet" hidden>← 問題に戻る</button>
-      <button class="btn sm" id="pPrev" aria-label="前のページ">◀</button>
-      <select id="pSel" aria-label="ページ"></select>
-      <button class="btn sm" id="pNext" aria-label="次のページ">▶</button>
-    </div>
-    <div class="pfocus" id="pFocus" hidden></div>
-    <div class="chips" id="zoomOpt">
-      <span class="chip on" data-z="100">拡大なし</span><span class="chip" data-z="150">150%</span><span class="chip" data-z="200">200%</span>
-    </div>
-    <div class="pmsg" id="pMsg" hidden></div>
-    <div id="vscroll">
-      <div id="vwrap">
-        <div class="pgimg" id="pgImg"></div>
-        <div class="pgimg" id="pgSheet"></div>
-        <div id="pMark" hidden><span>📍 この付近</span></div>
-        <div id="sheetBox"><div id="grip">⇅ 動かす</div></div>
-      </div>
-    </div>
-    <div class="note">赤・オレンジのペン字と、マーカーで塗った部分が隠れます。「動かす」をドラッグするか、下のバーで赤シートの位置と広さを変えられます。</div>
-  </section>
 </main>
-<div class="sbar" id="sbar" hidden><div class="in">
-  <div class="srow"><button class="btn sm" id="sOn">赤シート ON</button><button class="btn sm" id="sFull">全面</button><button class="btn sm" id="sUp">▲ 上へ</button><button class="btn sm" id="sDown">▼ 下へ</button></div>
-  <div class="srow"><label>位置<input type="range" id="rPos" min="0" max="100" step="0.5"></label><label>広さ<input type="range" id="rH" min="5" max="100" step="1"></label></div>
-</div></div>
 <button class="fab" id="toTop" hidden aria-label="先頭へ戻る">↑</button>
 
 <script>
@@ -1001,8 +924,6 @@ const SECTIONS = [
 ]}
 ];
 
-/* 各問題がプリント上のどのあたりにあるか（ページの上端を0、下端を1000とした目安。文字認識で推定） */
-const LOCY={"zd8wfw":292,"plqkya":292,"1a68jrn":324,"2nv6pi":324,"k7czcf":346,"qhcc3i":368,"aroc1m":389,"1mj15hf":421,"1lnpbtu":453,"9klwk3":484,"pjaxmd":516,"1afmi5n":548,"189dsoz":580,"avt0bg":588,"xiradq":596,"1bf3pll":617,"hi8k7g":617,"m8x6qe":657,"cq3jqs":678,"xfec5c":698,"159xqnh":719,"yvrw4p":739,"ic9imr":760,"1nxzsr3":780,"43rhzh":780,"5fo1jv":821,"frflig":821,"1dc9zlw":821,"1ncqe5o":821,"16j6my0":821,"a3jqi6":821,"76uo7p":884,"d6o7kc":884,"tbzhm1":884,"42n8vh":160,"13ryebw":175,"sbdyk5":192,"ngus2a":208,"1pm0jd4":224,"84rk8v":240,"1eiyf16":354,"1xxsyip":370,"1o74js9":387,"18jsyn0":404,"1c8cl9q":436,"18bhehw":452,"1ae8bl1":452,"1w34iqk":452,"9s6i7q":452,"1pgjymg":96,"1dqinlo":96,"1u4ql4z":96,"1re05dh":96,"1u8g86e":110,"e62ayy":127,"ptxws":144,"5zo6co":160,"1ugcd2t":176,"o5cjlv":192,"16qc67h":209,"1xhv7tf":290,"1he0oxn":290,"o5z35s":303,"netchz":316,"1i095fd":329,"17n4zkb":341,"1d24nnv":354,"96ueg6":354,"mrrpq4":394,"1m9s5e3":435,"15k750n":483,"1nu5g11":530,"7ftcta":557,"117tcf5":584,"1w5f18h":610,"3xv563":632,"1351t2h":654,"1xbbick":675,"1kb1x3h":702,"1wrs65b":728,"1uarp0n":755,"1k6gtcs":787,"a1hhju":803,"vee4m3":803,"17rf5vs":852,"9qq1rk":884,"1f4gvzi":884,"161graq":884,"1qky1ma":276,"vlb9tb":276,"l4ms4h":276,"ytp6pa":373,"111mlyw":405,"1pz9cc":437,"1xb7emk":437,"jqmfrd":453,"f6p2wu":466,"xvyfpz":478,"ovwl2":490,"55qf8w":502,"1feqfg6":550,"1hbtrz4":550,"1cakobp":575,"1oiz2gu":599,"1sp569x":623,"ng2uhg":648,"4i80ck":664,"170jmr2":664,"m8cxsl":697,"1j2qlfp":743,"19a26e":788,"1rl1tnf":833,"1pjx3cg":879,"r8dg2a":891,"1ejsgy5":903,"1t9yrbk":916,"l68ftx":928,"1uyxg8d":928,"neqa7a":928,"1pzihxy":79,"1bfhifv":103,"1f3p7ld":128,"3u94wt":144,"w9e960":209,"1awjiry":257,"1plnafc":305,"1briata":359,"j37omr":414,"1nq9j17":469,"dupeg3":523,"mfo58x":578,"1xkirba":643,"1jnzrai":709,"1r5n6o5":741,"gjl973":741,"vf4o1l":886,"qzqlpb":902,"1b2mu2a":919,"hztmdc":96,"6cf289":96,"ovnby9":111,"isvv8y":144,"vz2iwi":183,"l5o0m9":221,"1jqsp3n":260,"186sshh":338,"t203lh":338,"1cb15nv":377,"ictpwu":377,"p83jg8":454,"1vokj27":478,"v35owh":503,"qhfour":503,"17lmf9k":503,"17tc1xf":109,"hiqx8q":157,"rucgau":205,"1n5ybkx":636,"1ikykmt":693,"1ynu7yd":751,"1km2jcb":783,"ruttpo":816,"b7dhkh":848,"k8nc4p":129,"k8o6it":129,"1kihwyo":827,"ktla9b":827,"1vrs5zo":827,"1tvy230":827,"933wm":827,"nece44":827,"vlkv92":827,"1ye39nd":827,"1b1uzev":827,"yg75ld":843,"ac7ey2":891,"1ojlvnj":891,"yd99p4":891,"zvfsr7":891,"1xw55gr":891,"het04v":891,"12oqsoy":94,"1eoyv7i":136,"16u8vm0":178,"1i5vdz4":220,"1pj4htc":262,"1chwl80":303,"1chxcy9":303,"1chy4oi":303,"9y959k":335,"b2md55":335,"c6zl0q":335,"q9t8ad":579,"1cal0x7":693,"13rsp5x":760,"15szv4n":785,"nzpthf":810,"19xo76p":924,"4u0svn":167,"rym8ni":191,"tho11":216,"16a0284":241,"1mcr268":266,"eal94x":304,"cgojxh":343,"cgpbnq":382,"cgq3dz":421,"cgqv48":459,"1s17i09":498,"7tgcs":537,"11g4rwi":575,"g6aphq":614,"14n675n":653,"x22h3c":692,"8823az":730,"prnu86":769,"1fhie95":808,"qep0mm":825,"1ogp6p0":841,"1jhbed6":858,"as33wf":890,"6ao4j":907,"1jfw0fy":907,"upt0yr":122,"1fui0wg":122,"jxa8mi":122,"1ro1x69":122,"qg6jb1":122,"16ma3fx":138,"11o2bvt":154,"npt3gf":154,"1e4qdd7":191,"170mtim":228,"11jfetr":264,"944c8d":301,"118ovit":310,"1jcuoqf":320,"1syd1e0":330,"3aw0ka":340,"nk84yb":349,"1pmkf97":365,"1uxfdqc":399,"ctqibp":468,"slewlq":537,"1x8xpq2":606,"aq7at9":675,"ttpsew":707,"smyjkg":707,"5alyst":707,"hgqoho":790,"1bjffqo":809,"1eh40fr":828,"1fvquxs":847,"p8acab":866,"1g2n14":885,"hz7km9":904,"1djwgiq":151,"1vz2t2":162,"rbwf9t":173,"rrlm4g":184,"1wo8dfb":194,"injldl":205,"1ione6n":216,"80nzg0":231,"11tzlc8":256,"exrzel":281,"190vtvq":297,"o26asu":313,"11lmh49":329,"91kyod":345,"uqy6c2":423,"zb238h":500,"1ouo4ls":578,"knzx1f":655,"1pvtcir":655,"4c8b0b":655,"m3ymwr":655,"zfi0y5":655,"1screkj":218,"1d2jaxt":218,"wkrgs2":218,"1u00vch":260,"1my6ot5":303,"i06d0m":345,"8yqd6w":387,"190hntz":429,"1hxaoun":446,"1f46uqs":462,"1le1v0o":510,"vyf9y3":528,"b7wdrl":552,"jouqkl":576,"1b26pug":576,"1gb36ep":120,"1emz4zd":170,"g9amqq":170,"15b5p5b":170,"veh1yx":170,"8k76wy":192,"mx3grm":214,"ymfc3j":236,"pjvu8r":257,"9s827i":279,"uig211":301,"1imc94m":324,"o321tw":347,"11tt1bd":370,"1e859ah":393,"1bi50tp":416,"18x0h10":441,"5qssj1":465,"1ukwihz":490,"fwyzki":514,"j2w5f9":528,"peljwt":541,"rraeug":555,"hldc8t":568,"128wo03":582,"crkk4l":595,"l8igt2":171,"182g84o":171,"d1edhx":171,"1szejb0":179,"1uo4ior":187,"1s9cr5p":195,"2ycbp":203,"1ko308j":235,"1kob8lz":235,"1fta5kb":448,"1hkhuul":480,"15kkbao":512,"13or8ju":544,"mwxtzo":576,"1mu6x70":608,"1svui7h":641,"6gmxqq":673,"r5ak9x":706,"5tb2gr":739,"194uad0":739,"r3vs0h":739,"dm9q84":739,"x7145f":739,"54acxu":739,"1bcdqp3":739,"1qovae2":739,"25n6gk":739,"1dk27rw":739,"7q7bg2":739,"1gj1zlm":739,"c10vul":739,"djfwh6":739,"1jvg9q5":304,"11qcet9":304,"1pvv2g0":304,"1igta3c":304,"8wsoql":304,"wplxq5":304,"1kf4uzc":304,"10squ6t":304,"qhiozc":304,"2mvpql":304,"15hm57l":304,"13x6x4l":304,"1ksx1md":304,"chumkq":304,"2ktqx4":320,"p9iymf":337,"vt6xfg":353,"104bnre":370,"iq796w":384,"14gl8qu":398,"o2pggk":411,"tzqz6a":425,"5th4c":439,"436b1t":453,"wcn5k0":467,"d1zvx8":482,"n4f1cy":498,"cdv7bp":504,"yp8e8v":511,"1m334l4":517,"yyo0pf":524,"1d43833":530,"19ldn9c":530,"1dnsy0k":538,"t51sk9":545,"b5d75g":659,"ddlho4":772,"13e7brd":772,"1vmwwzf":793,"180c39j":813,"2ti84z":834,"1h4vnkk":854,"8yhqh1":862,"auat7s":870,"60ewcy":878,"15jdvxl":886,"1jk6bn8":894,"1khrtwy":903,"qclgok":903,"ktsam9":903,"tedgck":903,"h41zfh":903,"17l6l72":201,"1aw9yw5":201,"3tiul9":201,"14d4q7v":201,"12cmgi9":201,"12ck6fl":201,"1wexvuj":201,"1wc4l13":201,"phouom":238,"7y0iz3":276,"oxkv04":314,"a2l5lm":363,"cyo5v8":396,"1lf7844":429,"13pwehu":429,"1as6f6g":429,"88a9kl":429,"125ngoj":429,"8xeh2t":429,"52xu0e":429,"1t1uvv1":429,"embq70":429,"19leg95":429,"12254gy":429,"1gp7dip":429,"1jsw4m5":123,"hwrutr":170,"1nhwmor":382,"3bwlky":409,"1y6mvtg":436,"1c3pgti":464,"10hi15q":485,"18iuz1s":507,"1i40ist":529,"1p3klir":529,"1kcc593":578,"1ogmvo0":586,"11rr4h8":594,"1cnzaud":603,"1453t5p":611,"19p08j5":626,"1d3sbok":659,"5mg3st":691,"jxfack":691,"1j592xf":691,"7392iz":691,"4zxxfv":691,"73cjdy":691,"fryxeh":691,"1u41lz7":691,"yzkhsu":691,"hecfwx":691,"51ejwu":130,"n3bqdr":138,"fs23d4":146,"1ghllsw":162,"onk6qa":162,"8e6azb":257,"1jy4bkw":278,"t4f19k":278,"q091ge":321,"19plcwj":338,"1cwswbz":348,"bo9eiy":358,"unjl0":368,"xqe1ww":378,"1ixssty":388,"1awwpwv":398,"x31mgx":408,"hkn344":418,"1yvo7h3":437,"1av8p2a":456,"u2u579":475,"1l1jtqh":475,"8otogj":514,"aiatui":532,"117ggxn":539,"1pe7pgs":545,"7gymcq":552,"8jlyx2":559,"njgkhn":565,"1mpu4e6":572,"12s32iz":578,"fyyx1":585,"205oro":592,"p5oxdk":585,"w74njk":605,"ab052v":605,"163sxdc":618,"pu3bse":618,"pa8t2j":632,"11qbhrz":632,"u7bi88":645,"1gt1cp5":318,"nrqpmr":318,"1o4orjx":318,"2fvv4f":318,"1n3rv9o":318,"1vanuql":318,"wwle92":350,"31qmdn":448,"18c7t9z":693,"1bi8wfp":703,"b5kdhk":703,"1uy71vh":722,"8o8p0e":722,"10kqwg2":741,"oc01zz":741,"i6um97":760,"1832hok":768,"1vrfsrk":768,"1tv1qjf":784,"16sczfu":784,"13adgmv":800,"14edoni":808,"pvcv0c":817,"13qmyll":817,"o38aln":833,"87jv1o":833,"z2bpc7":849,"i8pc2":857,"cx269":857,"woj93e":873,"f8lh6k":873,"g2zl6m":890,"19dvyhu":898,"j5b0po":906,"1mj5li4":906,"nu7y5y":318,"1y3x53t":318,"fsiy0":318,"bu57t9":693,"1p8d4y4":800,"1vf79p6":906,"gpunhm":148,"r5yglb":148,"upn0n1":182,"1vqefo8":182,"etzv3b":342,"60zpur":502,"18q4pgz":502,"1qo11e1":502,"15vboob":502,"1e7d9g0":502,"1k63af7":502,"1bci9m3":502,"1pifod3":546,"104hfez":568,"1qhuwcl":590,"folojn":612,"7jvxym":634,"13ga7vq":684,"1dleoaf":735,"1ylv66p":770,"z1317i":791,"1id6ii1":812,"sr1sk":833,"c5fvcy":833,"bce05q":833,"1h87xsa":833,"z5nkf4":270,"1lo14n8":270,"1wl8glo":270,"z2aja8":270,"105g06p":270,"11ue819":270,"1kvpmzi":270,"7a5ct7":270,"18jzynp":304,"qpdyab":336,"50l77x":346,"ey5lih":346,"1x4cjli":366,"1vw766q":366,"1dn045j":386,"hrjs4f":402,"8xf8nf":402,"cq6eg2":434,"84osr6":563,"myyux6":693,"1e1vabm":822,"12cxe0q":872,"xw2y6a":880,"1pch9g1":888,"1yacrhz":888,"s5qeix":888,"ckbd1y":888,"135fbwi":888,"1iydggt":119,"9imrvc":119,"ujsc9l":119,"jvwxsv":171,"1jvsfti":223,"1xjg4ey":223,"15iw8cl":223,"1hcpvg0":223,"1j1qfb":319,"9du8m8":415,"ywofaa":510,"18xmphs":606,"1anzn37":638,"1jtclso":651,"bz04oa":651,"1h8z3of":676,"1uq4pab":689,"1llwn94":705,"dfscan":713,"1oat9jl":713,"1a0ew7y":730,"hs8tbw":738,"lmcxyi":738,"1n4gpql":738,"1r2emoy":763,"7mpyim":763,"nn2k0x":763,"xmjm1v":788,"obb9jq":788,"h1vhrz":788};
 /* ===================== 共通 ===================== */
 function hashStr(s){ let h=5381; for(let i=0;i<s.length;i++){ h=((h<<5)+h+s.charCodeAt(i))|0; } return (h>>>0).toString(36); }
 const ALL = [];
@@ -1060,13 +981,10 @@ function setTab(t){
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===t));
   $('#t1').hidden = t!=='t1';
   $('#t2').hidden = t!=='t2';
-  $('#t3').hidden = t!=='t3';
-  $('#sbar').hidden = t!=='t3';
   $('#toTop').hidden = true;
-  if(t==='t3') render3();
   window.scrollTo(0,0);
 }
-document.querySelectorAll('.tab').forEach(b=>{ b.onclick=()=>{ if(typeof clearFocus==='function') clearFocus(); setTab(b.dataset.tab); save(); }; });
+document.querySelectorAll('.tab').forEach(b=>{ b.onclick=()=>{ setTab(b.dataset.tab); save(); }; });
 window.addEventListener('scroll',()=>{ $('#toTop').hidden = !(curTab==='t1' && window.scrollY>700); },{passive:true});
 $('#toTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 
@@ -1096,14 +1014,13 @@ function render1(){
     src.textContent = shuffled1 ? ('#'+(n+1)+'　'+it.secTitle) : ('#'+(n+1));
     const q=document.createElement('div'); q.className='q'; q.textContent=it.q;
     const a=document.createElement('div');
-    const pb=makePrintBtn(it);
     const upd=()=>{
-      if(shown.has(it.id)){a.className='a'; a.textContent=it.a; pb.hidden=false;}
-      else{a.className='a hide'; a.textContent='タップして答えを見る'; pb.hidden=true;}
+      if(shown.has(it.id)){a.className='a'; a.textContent=it.a;}
+      else{a.className='a hide'; a.textContent='タップして答えを見る';}
     };
     upd();
     d.onclick=()=>{ if(shown.has(it.id)) shown.delete(it.id); else shown.add(it.id); upd(); };
-    d.append(src,q,a,pb); frag.appendChild(d);
+    d.append(src,q,a); frag.appendChild(d);
   });
   list.appendChild(frag);
 }
@@ -1135,7 +1052,7 @@ function buildSession(){
            idx, results:queue.map((_,i)=>results[i]||null), round, phase, screen:sessScreen };
 }
 function save(){
-  const o={ v:2, tab:curTab, sel2:[...sel2], orderMode, session:buildSession(), pr };
+  const o={ v:2, tab:curTab, sel2:[...sel2], orderMode, session:buildSession() };
   try{ localStorage.setItem(LS_KEY, JSON.stringify(o)); }catch(e){}
 }
 function applySession(s){
@@ -1307,7 +1224,6 @@ function next(){
   if(idx>=queue.length) showEnd(); else showQuestion();
 }
 $('#next').onclick=next;
-$('#viewPrint').onclick=()=>{ if(phase==='r' && queue[idx]) openPrint(queue[idx]); };
 
 /* 「ひとつ戻る」 */
 $('#back').onclick=()=>{
@@ -1320,7 +1236,7 @@ $('#input').addEventListener('keydown',e=>{
   if(e.key==='Enter' && !e.isComposing && e.keyCode!==229){ e.preventDefault(); submit(); }
 });
 document.addEventListener('keydown',e=>{
-  if(e.key==='Enter' && phase==='r' && !$('#t2').hidden && !$('#quiz').hidden && document.activeElement){
+  if(e.key==='Enter' && phase==='r' && !$('#quiz').hidden && document.activeElement){
     if(document.activeElement.tagName==='BUTTON') return; // ボタン自身のクリックに任せる
     e.preventDefault(); next();
   }
@@ -1338,7 +1254,7 @@ function showEnd(){
       const li=document.createElement('li');
       const q=document.createElement('div'); q.textContent=it.q;
       const a=document.createElement('div'); a.append('→ '); const b=document.createElement('b'); b.textContent=it.a; a.appendChild(b);
-      li.append(q,a,makePrintBtn(it)); wl.appendChild(li);
+      li.append(q,a); wl.appendChild(li);
     });
     $('#retry').hidden=false; $('#again').hidden=true;
     sessionDone=false;
@@ -1353,122 +1269,6 @@ $('#retry').onclick=()=>{ const w=stats().w; round++; startRound(w); };
 $('#again').onclick=()=>{ round=1; startRound(scope); };
 $('#toSetup').onclick=()=>{ show('setup'); };
 
-
-/* ===================== タブ3: プリント（赤シート） ===================== */
-const IMG_DIR='img/';   // 画像フォルダ（index.html と同じ場所の img フォルダ）
-const PAGE_H={"18": 2140, "19": 2095, "20": 2111, "21": 2265, "22": 2109, "23": 2121, "24": 2132, "25": 2111, "26": 2122, "27": 2099, "28": 2094, "29": 2225, "30": 2071, "31": 2109, "32": 2105, "33": 2107, "34": 2111, "35": 2093, "36": 2166, "37": 2103, "38": 2059, "39": 2090, "40": 2099};  // 各ページ画像の高さ（幅は1500固定）
-const PAGES=SECTIONS.map(s=>({no:+s.id.slice(1), title:s.title}));
-const pr={page:0, top:25, h:30, on:true, zoom:100};
-const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
-
-PAGES.forEach((p,i)=>{ const o=document.createElement('option'); o.value=i; o.textContent=p.title; $('#pSel').appendChild(o); });
-
-function applySheet(){
-  pr.h=clamp(pr.h,5,100); pr.top=clamp(pr.top,0,100-pr.h);
-  const bot=100-pr.top-pr.h;
-  $('#pgSheet').hidden = $('#sheetBox').hidden = !pr.on;
-  $('#pgSheet').style.clipPath='inset('+pr.top+'% 0 '+bot+'% 0)';
-  $('#sheetBox').style.top=pr.top+'%'; $('#sheetBox').style.height=pr.h+'%';
-  const rp=$('#rPos'); rp.max=100-pr.h; rp.value=pr.top;
-  $('#rH').value=pr.h;
-  $('#sOn').textContent='赤シート '+(pr.on?'ON':'OFF'); $('#sOn').classList.toggle('off',!pr.on);
-}
-function render3(){
-  pr.page=clamp(pr.page|0,0,PAGES.length-1);
-  const p=PAGES[pr.page], h=PAGE_H[p.no]||2100;
-  $('#pSel').value=pr.page;
-  $('#vwrap').style.width=pr.zoom+'%';
-  const file=IMG_DIR+'p'+p.no+'.jpg';
-  ['#pgImg','#pgSheet'].forEach(s=>{ const e=$(s); e.style.aspectRatio='1500 / '+h; e.style.backgroundImage='url("'+file+'")'; });
-  document.querySelectorAll('#zoomOpt .chip').forEach(c=>c.classList.toggle('on',+c.dataset.z===pr.zoom));
-  const msg=$('#pMsg'); msg.hidden=true;
-  const im=new Image(); im.onerror=()=>{ msg.textContent='画像が読み込めません：'+file+'（index.html と同じ場所に img フォルダごと置いてありますか？）'; msg.hidden=false; };
-  im.src=file;
-  [pr.page-1,pr.page+1].forEach(i=>{ if(PAGES[i]){ const n=new Image(); n.src=IMG_DIR+'p'+PAGES[i].no+'.jpg'; } });
-  applyFocus();
-  applySheet();
-}
-function goPage(i){ if(i<0||i>=PAGES.length) return; clearFocus(); pr.page=i; render3(); window.scrollTo(0,0); save(); }
-$('#pPrev').onclick=()=>goPage(pr.page-1);
-$('#pNext').onclick=()=>goPage(pr.page+1);
-$('#pSel').onchange=e=>goPage(+e.target.value);
-document.querySelectorAll('#zoomOpt .chip').forEach(c=>{ c.onclick=()=>{ pr.zoom=+c.dataset.z; render3(); save(); }; });
-$('#sOn').onclick=()=>{ pr.on=!pr.on; applySheet(); save(); };
-$('#sFull').onclick=()=>{ pr.on=true; pr.top=0; pr.h=100; applySheet(); save(); };
-$('#sUp').onclick=()=>{ pr.on=true; pr.top-=5; applySheet(); save(); };
-$('#sDown').onclick=()=>{ pr.on=true; pr.top+=5; applySheet(); save(); };
-$('#rPos').oninput=e=>{ pr.top=+e.target.value; applySheet(); };
-$('#rPos').onchange=save;
-$('#rH').oninput=e=>{ pr.h=+e.target.value; applySheet(); };
-$('#rH').onchange=save;
-
-/* 「動かす」ボタンのドラッグで赤シートを上下に動かす */
-let drag=null;
-const grip=$('#grip');
-grip.addEventListener('pointerdown',e=>{
-  const r=$('#vwrap').getBoundingClientRect();
-  drag={off:(e.clientY-r.top)/r.height*100-pr.top};
-  try{ grip.setPointerCapture(e.pointerId); }catch(_){}
-  e.preventDefault();
-});
-grip.addEventListener('pointermove',e=>{
-  if(!drag) return;
-  const r=$('#vwrap').getBoundingClientRect();
-  pr.top=(e.clientY-r.top)/r.height*100-drag.off;
-  applySheet();
-  if(e.clientY<140) window.scrollBy(0,-14);                       // 画面の端に近づいたら自動スクロール
-  else if(e.clientY>window.innerHeight-210) window.scrollBy(0,14);
-});
-['pointerup','pointercancel'].forEach(ev=>grip.addEventListener(ev,()=>{ if(drag){ drag=null; save(); } }));
-
-/* ===================== 「プリントを見る」 ===================== */
-let focus=null;     // {item, y}  プリント上で目印を出す問題（y は 0〜1 か null）
-let ret=null;       // {tab, y, on} 「問題に戻る」で戻る先
-function makePrintBtn(it){
-  const b=document.createElement('button'); b.type='button'; b.className='pbtn'; b.textContent='📄 プリントを見る';
-  b.onclick=e=>{ e.stopPropagation(); openPrint(it); };
-  return b;
-}
-function openPrint(it){
-  const no=+it.sec.slice(1), pi=PAGES.findIndex(p=>p.no===no);
-  if(pi<0) return;
-  ret={tab:curTab, y:window.scrollY, on:pr.on};
-  const loc=LOCY[it.key];
-  focus={item:it, y:(typeof loc==='number')?loc/1000:null};
-  pr.page=pi; pr.on=false;          // 答えを確認するので赤シートは外す
-  setTab('t3');                     // 中で render3() → applyFocus() が呼ばれる
-  scrollToFocus();
-  save();
-}
-function scrollToFocus(){
-  if(!focus){ window.scrollTo(0,0); return; }
-  const r=$('#vwrap').getBoundingClientRect();
-  const y = focus.y==null ? 0 : focus.y*r.height;
-  window.scrollTo({top:Math.max(0, window.scrollY + r.top + y - window.innerHeight*0.35), behavior:'instant'});
-}
-function applyFocus(){
-  const m=$('#pMark'), f=$('#pFocus');
-  $('#pRet').hidden=!ret;
-  if(!focus){ m.hidden=true; f.hidden=true; return; }
-  const it=focus.item;
-  f.hidden=false; f.textContent='';
-  const d1=document.createElement('div'); d1.textContent='問題：'+it.q;
-  const d2=document.createElement('div'); d2.append('答え：'); const b=document.createElement('b'); b.textContent=it.a; d2.appendChild(b);
-  const h=document.createElement('span'); h.className='hint';
-  h.textContent = focus.y==null ? 'このページのどこかにあります。' : '黄色い帯のあたりが目安です（位置は自動で推定しているため、少しずれることがあります）。';
-  f.append(d1,d2,h);
-  if(focus.y==null){ m.hidden=true; return; }
-  const bh=0.12, top=clamp(focus.y-bh/2,0,1-bh);
-  m.style.top=(top*100)+'%'; m.style.height=(bh*100)+'%'; m.hidden=false;
-}
-function clearFocus(){ focus=null; ret=null; applyFocus(); }
-$('#pRet').onclick=()=>{
-  const r=ret; if(!r) return;
-  clearFocus(); pr.on=r.on; setTab(r.tab);
-  window.scrollTo({top:r.y, behavior:'instant'});
-  save();
-};
-
 /* ===================== 起動時：前回の状態を復元 ===================== */
 if(saved){
   if(Array.isArray(saved.sel2)){
@@ -1477,16 +1277,11 @@ if(saved){
   }
   if(saved.orderMode==='order' || saved.orderMode==='shuffle') orderMode=saved.orderMode;
   if(saved.session) applySession(saved.session);
-  if(saved.pr && typeof saved.pr==='object'){
-    const q=saved.pr, num=(v,d)=>Number.isFinite(+v)?+v:d;
-    pr.page=num(q.page,0); pr.top=num(q.top,25); pr.h=num(q.h,30); pr.on=q.on!==false;
-    pr.zoom=[100,150,200].includes(+q.zoom)?+q.zoom:100;
-  }
 }
 setOrderUI();
 refreshChips2();
 updResume();
-if(saved && (saved.tab==='t1' || saved.tab==='t2' || saved.tab==='t3')) setTab(saved.tab);
+if(saved && (saved.tab==='t1' || saved.tab==='t2')) setTab(saved.tab);
 </script>
 </body>
 </html>
